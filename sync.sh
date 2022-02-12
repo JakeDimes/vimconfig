@@ -7,7 +7,11 @@ if [ $ANSWER == "F" ]; then
 	
 	if [ $ANSWER == "y" ]; then
 
-		cp -r $HOME/.vim ./
+		rm -rf ./.vim/*
+		rm ./.vimrc
+		
+		cp -r $HOME/.vim/after ./.vim/
+		cp -r $HOME/.vim/pack ./.vim/
 		cp $HOME/.vimrc ./
 
 	else
@@ -19,6 +23,11 @@ elif [ $ANSWER == "T" ]; then
 	read -p "This will overwrite directory ~/.vim and file ~/.vimrc. Continue? [y/n]" ANSWER
 	
 	if [ $ANSWER == "y" ]; then
+		rm -rf $HOME/.vim/after
+		rm -rf $HOME/.vim/pack
+		rm $HOME/.vimrc
+		
+		
 		cp -r ./.vim $HOME/
 		cp ./.vimrc $HOME/
 	else
