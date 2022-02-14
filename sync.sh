@@ -12,6 +12,7 @@ if [ $ANSWER == "F" ]; then
 		
 		cp -r $HOME/.vim/after ./.vim/
 		cp -r $HOME/.vim/pack ./.vim/
+		cp -r $HOME/.vim/bundle/vim-snippets/snippets ./
 		cp $HOME/.vimrc ./
 
 	else
@@ -25,11 +26,14 @@ elif [ $ANSWER == "T" ]; then
 	if [ $ANSWER == "y" ]; then
 		rm -rf $HOME/.vim/after
 		rm -rf $HOME/.vim/pack
+		rm -rf $HOME/.vim/bundle/vim-snippets/snippets
+
 		rm $HOME/.vimrc
 		
 		
 		cp -r ./.vim $HOME/
 		cp ./.vimrc $HOME/
+		cp -r ./snippets $HOME/.vim/bundle/vim-snippets/
 	else
 		echo "Cancelling"
 	fi
