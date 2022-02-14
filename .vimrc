@@ -70,6 +70,7 @@ nnoremap <space> = za
 
 " NERDTree config
 nnoremap <C-n> = :NERDTreeToggle<CR>
+let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 " Refresh the current folder if any changes
 autocmd BufEnter NERD_tree_* | execute 'normal R'
 au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
@@ -84,5 +85,5 @@ augroup END
 set hlsearch
 
 " change tab switch keys
-nnoremap gy = gt
-nnoremap gt = gT
+nnoremap # = gt
+nnoremap @ = gT
