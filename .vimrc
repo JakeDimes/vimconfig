@@ -23,6 +23,8 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+Plugin 'ycm-core/YouCompleteMe'
+
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
@@ -90,3 +92,29 @@ set hlsearch
 " change tab switch keys
 nnoremap # = gt
 nnoremap @ = gT
+
+
+
+
+" YouCompleteMe Configuration
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/global_extra_conf.py'
+
+
+
+
+
+
+
+
+
+
+
+
+
+

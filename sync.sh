@@ -9,9 +9,11 @@ if [ $ANSWER == "F" ]; then
 
 		rm -rf ./.vim/*
 		rm ./.vimrc
+		rm -rf ./snippets
 		
 		cp -r $HOME/.vim/after ./.vim/
 		cp -r $HOME/.vim/pack ./.vim/
+		cp -r $HOME/.vim/ycm ./.vim/
 		cp -r $HOME/.vim/bundle/vim-snippets/snippets ./
 		cp $HOME/.vimrc ./
 
@@ -26,12 +28,14 @@ elif [ $ANSWER == "T" ]; then
 	if [ $ANSWER == "y" ]; then
 		rm -rf $HOME/.vim/after
 		rm -rf $HOME/.vim/pack
+		rm -rf $HOME/.vim/ycm
 		rm -rf $HOME/.vim/bundle/vim-snippets/snippets
 
 		rm $HOME/.vimrc
 		
 		
 		cp -r ./.vim $HOME/
+		cp -r ./.vim/ycm $HOME/.vim/
 		cp ./.vimrc $HOME/
 		cp -r ./snippets $HOME/.vim/bundle/vim-snippets/
 	else
