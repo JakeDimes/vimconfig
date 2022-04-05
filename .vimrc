@@ -20,20 +20,10 @@ Plugin 'lervag/vimtex'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
 Plugin 'ycm-core/YouCompleteMe'
 
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+Plugin 'ervandew/supertab'
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'xuhdev/vim-latex-live-preview'
 
@@ -93,8 +83,9 @@ set hlsearch
 nnoremap # = gt
 nnoremap @ = gT
 
-
-
+" Cursors
+au InsertEnter * silent execute "!echo -en \<esc>[5 q"
+au InsertLeave * silent execute "!echo -en \<esc>[2 q"
 
 " YouCompleteMe Configuration
 let g:ycm_python_interpreter_path = ''
@@ -105,16 +96,21 @@ let g:ycm_extra_conf_vim_data = [
   \]
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/global_extra_conf.py'
 
+" Ultisnips configuration
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsEditSplit="vertical"
 
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-
-
-
-
-
-
-
-
-
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<tab>"
 
